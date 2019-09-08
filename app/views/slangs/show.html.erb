@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Slang:</strong>
+  <%= @slang.slang %>
+</p>
+
+<p>
+  <strong>Meaning:</strong>
+  <%= @slang.meaning %>
+</p>
+
+<p>
+  <strong>Usage:</strong>
+  <%= @slang.usage %>
+</p>
+
+<% if current_user %>
+
+<%= link_to 'Edit', edit_slang_path(@slang) %> |
+
+<%= link_to 'Back', slangs_path %>
+<% else %>
+<%= link_to 'Back', slangs_path %>
+<% end %>

@@ -1,0 +1,19 @@
+
+
+<div id="search" class="text-center">
+<%= form_tag  "#", method: :get, id: "search_form" do %>
+
+<div class="form-group row no-padding text-center col-md-12">
+    <div class="col-md-4">
+    <%= text_field_tag :search, params[:slang], placeholder: "Lookup slang", autofocus: true, class: "form-control search-box input-lg" %>
+    </div>
+
+    <div class="col-md-2">
+    <%= button_tag(type: :submit, class: "btn btn-lg btn-success") do %>
+    <i class="fa fa-search"></i> Look up a stock
+    <% end %>
+    </div>
+</div>
+
+<% end %>
+</div>

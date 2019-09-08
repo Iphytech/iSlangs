@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<%=  render 'search' %>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Slang</th>
+      <th scope="col">Meaning</th>
+      <th scope="col">Usage</th>
+      <th scope="col">By</th>
+      <th scope="col">Added</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @slangs.each do |slang| %>
+      <tr>
+        <td scope="row"><%= slang.slang %></td>
+        <td><%= slang.meaning %></td>
+        <td><%= slang.usage %></td>
+        <td><%= slang.user.username %></td> 
+        <td scope="row"><%= distance_of_time_in_words(slang.created_at, Time.now) %> ago</td>
+        <% if current_user %>
+        <td><%= link_to 'Show', slang %></td>
+        <td><%= link_to 'Edit', edit_slang_path(slang) %></td>
+        <td><%= link_to 'Destroy', slang, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if current_user %>
+<%= link_to 'New Slang', new_slang_path %>
+<% end %>

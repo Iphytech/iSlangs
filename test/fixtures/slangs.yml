@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slang: MyString
+  meaning: MyText
+  usage: MyText
+
+two:
+  slang: MyString
+  meaning: MyText
+  usage: MyText

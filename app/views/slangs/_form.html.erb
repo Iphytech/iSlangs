@@ -1,0 +1,32 @@
+<%= form_with(model: slang, local: true) do |form| %>
+  <% if slang.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(slang.errors.count, "error") %> prohibited this slang from being saved:</h2>
+
+      <ul>
+      <% slang.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :slang %>
+    <%= form.text_field :slang %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meaning %>
+    <%= form.text_area :meaning %>
+  </div>
+
+  <div class="field">
+    <%= form.label :usage %>
+    <%= form.text_area :usage %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

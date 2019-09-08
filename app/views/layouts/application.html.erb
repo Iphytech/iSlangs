@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Islangs</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">iSlang Knowledge base</span>
+</nav>
+       <% if current_user %>
+       <%= link_to 'logout' , destroy_user_session_path, method: :delete %>
+       <% end %>
+       <div class="container-fluid">
+    <%= yield %>
+    </div>
+
+    <footer class="app-footer">
+  <div>
+    <a href="https://coreui.io">Iphy</a>
+    <span>&copy; 2018 creativeLabs.</span>
+  </div>
+
+</footer>
+  </body>
+</html>
